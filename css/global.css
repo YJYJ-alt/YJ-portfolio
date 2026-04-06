@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  background-color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000;
+  cursor: none;
+  font-optical-sizing: auto;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+:root {
+  --hero-bg: #f5f3ff;
+  --hero-text: #3d2f8a;
+  --hero-accent: #7c6fc7;
+  --hero-surface: #e9e4ff;
+  --hero-muted: #c4b8f5;
+
+  --s1-bg: #1e1535;
+  --s1-text: #e8e4ff;
+  --s1-accent: #9b8fd4;
+  --s1-surface: #2d1f5e;
+  --s1-muted: #c9c2f0;
+
+  --s2-bg: #0d0d1f;
+  --s2-text: #f0f4ff;
+  --s2-accent: #6e5fbf;
+  --s2-star: #b8d4f5;
+  --s2-surface: #161630;
+  --s2-muted: #a08ee0;
+
+  --s3-bg: #2b1d3f;
+  --s3-text: #edd5f5;
+  --s3-accent: #b87fc9;
+  --s3-warm: #f0c8a0;
+  --s3-surface: #3d2956;
+  --s3-muted: #d4a8e0;
+
+  --s4-bg: #13102a;
+  --s4-text: #dcdaf5;
+  --s4-accent: #7b72b8;
+  --s4-surface: #1e1a3a;
+  --s4-muted: #ada6d8;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", sans-serif;
+  --transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

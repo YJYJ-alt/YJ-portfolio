@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포트폴리오-권연주</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/global.css" />
+
+    <script src="js/script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="progress-bar" id="progress"></div>
+
+    <!-- modal -->
+    <div class="card-modal-backdrop" id="cardModalBackdrop">
+      <div class="card-modal" id="cardModal">
+        <button class="card-modal-close" id="cardModalClose">✕</button>
+        <div class="card-modal-thumb" id="cardModalThumb">
+          <span class="card-modal-thumb-label" id="cardModalThumbLabel"></span>
+        </div>
+        <div class="card-modal-tags" id="cardModalTags"></div>
+        <h3 class="card-modal-title" id="cardModalTitle"></h3>
+        <p class="card-modal-desc" id="cardModalDesc"></p>
+        <div class="card-modal-divider"></div>
+        <div class="card-modal-meta-grid">
+          <div class="card-modal-meta-item">
+            <p class="card-modal-meta-label">기여도</p>
+            <p class="card-modal-meta-value" id="cardModalContrib"></p>
+            <div class="card-modal-contribution-bar">
+              <div
+                class="card-modal-contribution-fill"
+                id="cardModalContribFill"
+              ></div>
+            </div>
+          </div>
+          <div class="card-modal-meta-item">
+            <p class="card-modal-meta-label">기간</p>
+            <p class="card-modal-meta-value" id="cardModalPeriod"></p>
+          </div>
+          <div class="card-modal-meta-item">
+            <p class="card-modal-meta-label">역할</p>
+            <p class="card-modal-meta-value" id="cardModalRole"></p>
+          </div>
+          <div class="card-modal-meta-item">
+            <p class="card-modal-meta-label">사용 툴</p>
+            <p class="card-modal-meta-value" id="cardModalTools"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- navigation -->
+    <header class="site-header">
+      <div class="container">
+        <nav id="nav">
+          <a href="#hero" class="nav-logo">
+            <img src="assets/로고화이트.png" alt="YJ studio" />
+          </a>
+          <ul class="nav-links">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#project">project</a></li>
+            <li><a href="#work">work</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- 섹션 닷 인디케이터 -->
+        <div class="section-dots" id="sectionDots">
+          <div class="sec-dot active" data-target="hero"></div>
+          <div class="sec-dot" data-target="s1"></div>
+          <div class="sec-dot" data-target="s2"></div>
+          <div class="sec-dot" data-target="s3"></div>
+          <div class="sec-dot" data-target="s4"></div>
+          <div class="sec-dot" data-target="about"></div>
+          <div class="sec-dot" data-target="contact"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- 1. HERO section -->
+      <section id="hero">
+        <!-- 별하늘 레이어 -->
+        <div class="hero-layer" id="herolayer">
+          <canvas id="starbg"></canvas>
+          <div class="hero-sky"></div>
+          <div class="hero-cloud hero-cloud1"></div>
+          <div class="hero-cloud hero-cloud2"></div>
+          <div class="hero-cloud hero-cloud3"></div>
+
+          <!-- hero text -->
+          <div class="hero-text" id="herotext">
+            <p class="hero-small">UI · UX Designer</p>
+            <h1 class="hero-main">
+              사용자 경험을 중심으로<br />
+              <em>브랜딩</em>부터 <em>웹</em>까지 연결된<br />
+              디자인을 만듭니다
+            </h1>
+            <p class="hero-sub">
+              멈추지 않게 하는 이유를 찾고,<br />
+              그 이유를 디자인으로 만듭니다
+            </p>
+            <div class="hero-btn">
+              <a href="#s1" class="btn-primary">View Work</a>
+              <div class="replay-btn">
+                <button class="btn-trans" id="replaybtn">
+                  <i class="fa-solid fa-arrow-rotate-left"></i>
+                  다시보기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 망원경 렌즈 -->
+        <div class="lens-layer" id="lenslayer">
+          <canvas id="lenscanvas"></canvas>
+        </div>
+        <div class="hero-scroll">
+          <span>scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- 2. about section -->
+      <section id="about">
+        <div class="section-inner">
+          <h2 class="section-label fade-in">about me</h2>
+          <div class="about-grid">
+            <div class="about-left fade-in">
+              <div class="avatar">
+                <img src="assets/임시2.png" alt="프로필 사진" />
+              </div>
+
+              <div class="contact-list">
+                <!-- <a href=""></a> -->
+                <div class="contact-icon">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span class="contact-text">
+                    <span> violetchiffonn@gmail.com</span>
+                  </span>
+                  <i class="fa-solid fa-cake-candles"></i>
+                  <span class="contact-text">
+                    <span>1995.07.16</span>
+                  </span>
+                  <i class="fa-solid fa-mobile"></i>
+                  <span class="contact-text">
+                    <span>010-9359-9185</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-right">
+              <p class="about-intro fade-in">
+                흐름을 멈추지 않게 만드는 이유를 찾고, <br />
+                그 이유를 디자인으로 풀어내는 UI/UX 디자이너입니다. <br />
+                사용자 경험 속에서 자연스럽게 이어지는 설계를 고민합니다.
+              </p>
+
+              <div class="about-divider fade-in"></div>
+
+              <div class="fade-in">
+                <h3 class="about-block-title">Design Tools</h3>
+                <div class="skill-bars">
+                  <div class="skill-bar-row">
+                    <span class="skill-bar-name">Photoshop</span>
+                    <div class="skill-bar-bg">
+                      <div class="skill-bar-fill" data-width="0.8"></div>
+                    </div>
+                  </div>
+                  <div class="skill-bar-row">
+                    <span class="skill-bar-name">Illustrator</span>
+                    <div class="skill-bar-bg">
+                      <div class="skill-bar-fill" data-width="0.75"></div>
+                    </div>
+                  </div>
+                  <div class="skill-bar-row">
+                    <span class="skill-bar-name">Figma</span>
+                    <div class="skill-bar-bg">
+                      <div class="skill-bar-fill" data-width="0.7"></div>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="about-block-title">Publishing</h3>
+                <div class="skill-tags">
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">CSS</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <!-- <span class="skill-tag">Git</span> -->
+                </div>
+
+                <div class="about-divider fade-in"></div>
+              </div>
+
+              <div class="fade-in">
+                <h3 class="about-block-title">Education / Certificates</h3>
+                <div class="edu-list">
+                  <div class="edu-item">
+                    <div class="edu-timeline">
+                      <div class="edu-dot"></div>
+                      <div class="edu-line"></div>
+                    </div>
+                    <div>
+                      <p class="edu-title">계명문화대학교 식품영양조리학과</p>
+                      <p class="edu-sub">졸업</p>
+                    </div>
+                  </div>
+                  <div class="edu-item">
+                    <div class="edu-timeline">
+                      <div class="edu-dot"></div>
+                      <div class="edu-line"></div>
+                    </div>
+                    <div>
+                      <p class="edu-title">GTQ 그래픽기술자격 1급</p>
+                      <p class="edu-sub">한국생산성본부</p>
+                    </div>
+                  </div>
+                  <div class="edu-item">
+                    <div class="edu-timeline"><div class="edu-dot"></div></div>
+                    <div>
+                      <p class="edu-title">컴퓨터그래픽스운용기능사</p>
+                      <p class="edu-sub">한국산업인력공단</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- project & works -->
+      <section class="section-pw-intro" id="pw-intro">
+        <div class="section-pw-intro__sticky">
+          <div class="pw-title" aria-label="Project &amp; Works">
+            <span class="pw-word" id="pw-project">Project</span>
+            <span class="pw-word pw-word--amp" id="pw-amp">&amp;</span>
+            <span class="pw-word" id="pw-works">Works</span>
+          </div>
+          <p class="pw-hint" id="pw-hint">↓ scroll</p>
+        </div>
+      </section>
+
+      <!-- 3. Web / UI·UX -->
+      <section id="uiux">
+        <div class="section-inner">
+          <p class="section-label fade-in">01 — Web / UI·UX</p>
+          <h2 class="section-heading fade-in">주요 <em>프로젝트</em></h2>
+          <div class="sticky-container">
+            <div class="sticky-img-panel">
+              <div class="sticky-img-frame bg-0" id="stickyFrame">
+                <div class="sticky-img-placeholder" id="stickyPlaceholder">
+                  <img src="assets/웹-고가바.jpg" alt="GoGaba" id="stickyImg" />
+                </div>
+              </div>
+            </div>
+            <div class="sticky-items-panel">
+              <div
+                class="sticky-work-item active"
+                data-idx="0"
+                data-label="GoGaba"
+                data-bg="bg-0"
+                data-img="assets/웹-고가바.jpg"
+              >
+                <p class="work-num">01</p>
+                <h3 class="work-title">GoGaba<br />협업 웹 서비스 플랫폼</h3>
+                <p class="work-desc">
+                  드라마 촬영지를 여행 코스로 연결하는 2차 협업 웹 서비스. SVG
+                  지도 인터랙션, 필터 탭, 루트 카드까지 기획·디자인·퍼블리싱 전
+                  과정.
+                </p>
+                <div class="work-tags">
+                  <span class="work-tag">Figma</span>
+                  <span class="work-tag">HTML/CSS</span>
+                  <span class="work-tag">JavaScript</span>
+                  <span class="work-tag">협업</span>
+                </div>
+                <a href="#" class="work-link"
+                  >View Project <span class="work-link-arrow">→</span></a
+                >
+              </div>
+
+              <div
+                class="sticky-work-item"
+                data-idx="1"
+                data-label="앱 디자인"
+                data-bg="bg-1"
+                data-img="assets/앱-미션-연주_2.jpg"
+              >
+                <p class="work-num">02</p>
+                <h3 class="work-title">협업 앱 디자인</h3>
+                <p class="work-desc">
+                  팀 프로젝트로 진행한 모바일 앱 UI/UX 디자인. 사용자 플로우
+                  설계부터 프로토타이핑까지.
+                </p>
+                <div class="work-tags">
+                  <span class="work-tag">Figma</span>
+                  <span class="work-tag">앱 디자인</span>
+                  <span class="work-tag">프로토타입</span>
+                </div>
+                <a href="#" class="work-link"
+                  >View Project <span class="work-link-arrow">→</span></a
+                >
+              </div>
+
+              <div
+                class="sticky-work-item"
+                data-idx="2"
+                data-label="페레로 로쉐"
+                data-bg="bg-2"
+                data-img="assets/앱-페레로 리디자인.jpg"
+              >
+                <p class="work-num">03</p>
+                <h3 class="work-title">
+                  페레로 로쉐<br />1차 협업 사이트 리디자인
+                </h3>
+                <p class="work-desc">
+                  기존 브랜드 사이트를 리디자인한 1차 협업 프로젝트. 브랜드
+                  아이덴티티를 유지하면서 UX를 개선.
+                </p>
+                <div class="work-tags">
+                  <span class="work-tag">리디자인</span>
+                  <span class="work-tag">Figma</span>
+                  <span class="work-tag">협업</span>
+                </div>
+                <a href="#" class="work-link"
+                  >View Project <span class="work-link-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Web Design(page)  -->
+      <section id="s2">
+        <canvas class="stars-canvas" id="starsCanvas"></canvas>
+        <div class="section-inner" style="position: relative; z-index: 1">
+          <p class="section-label fade-in">03 — Web Design</p>
+          <h2 class="section-heading fade-in">페이지 <em>디자인</em></h2>
+          <div class="filter-tabs fade-in">
+            <button class="filter-tab active" data-filter="all">전체</button>
+            <button class="filter-tab" data-filter="landing">랜딩페이지</button>
+            <button class="filter-tab" data-filter="detail">상세페이지</button>
+            <button class="filter-tab" data-filter="gif">GIF 상세</button>
+            <button class="filter-tab" data-filter="clone">클론코딩</button>
+          </div>
+          <div class="works-grid">
+            <div
+              class="work-card"
+              data-category="landing"
+              data-title="랜딩페이지"
+              data-desc="브랜드 아이덴티티를 담은 랜딩페이지 디자인 및 퍼블리싱 프로젝트."
+              data-contribution="100"
+              data-period="2026.01 ~ 2026.02"
+              data-role="기획 · 디자인 · 퍼블리싱"
+              data-tools="Figma, HTML/CSS"
+              data-tags="#랜딩페이지 #웹디자인"
+            >
+              <div class="card-img c-landing">
+                <img src="assets/랜딩페이지-메인.jpg" alt="랜딩페이지" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">랜딩페이지 2</p>
+                  <p class="card-hover-meta">Web Design · Landing</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">랜딩페이지</p>
+                <p class="card-meta">Web Design · Landing</p>
+              </div>
+            </div>
+            <div
+              class="work-card"
+              data-category="detail"
+              data-title="상세페이지"
+              data-desc="제품의 특징을 효과적으로 전달하기 위한 상세페이지 디자인."
+              data-contribution="100"
+              data-period="2026.02 ~ 2026.02"
+              data-role="디자인 · 퍼블리싱"
+              data-tools="Figma, HTML/CSS"
+              data-tags="#상세페이지 #웹디자인"
+            >
+              <div class="card-img c-detail">
+                <img src="assets/상세페이지-메인.jpg" alt="상세페이지" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">상세페이지</p>
+                  <p class="card-hover-meta">Web Design · Detail</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">상세페이지</p>
+                <p class="card-meta">Web Design · Detail</p>
+              </div>
+            </div>
+            <div
+              class="work-card"
+              data-category="gif"
+              data-title="GIF 상세페이지"
+              data-desc="GIF 애니메이션을 활용해 제품 이미지를 효과적으로 전달하는 상세페이지."
+              data-contribution="100"
+              data-period="2026.01 ~ 2026.02"
+              data-role="디자인 · 퍼블리싱"
+              data-tools="Figma, Photoshop"
+              data-tags="#gif #상세페이지 #컬러풀"
+            >
+              <div class="card-img c-gif">
+                <span class="card-img-label">GIF</span>
+                <img src="assets/gif 상페.jpg" alt="gif" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">GIF 상세페이지</p>
+                  <p class="card-hover-meta">Web Design · GIF Detail</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">GIF 상세페이지</p>
+                <p class="card-meta">Web Design · GIF Detail</p>
+              </div>
+            </div>
+            <div
+              class="work-card"
+              data-category="clone"
+              data-title="클론코딩"
+              data-desc="실제 웹사이트를 분석하고 HTML/CSS/JS로 재현한 클론코딩 프로젝트."
+              data-contribution="100"
+              data-period="2026.01 ~ 2026.01"
+              data-role="퍼블리싱"
+              data-tools="HTML, CSS, JavaScript"
+              data-tags="#클론코딩 #프론트엔드"
+            >
+              <div class="card-img c-clone">
+                <img src="assets/클론코딩.jpg" alt="클론코딩" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">클론코딩</p>
+                  <p class="card-hover-meta">Frontend · Clone</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">클론코딩</p>
+                <p class="card-meta">Frontend · Clone</p>
+              </div>
+            </div>
+            <div
+              class="work-card"
+              data-category="landing"
+              data-title="랜딩페이지 2"
+              data-desc="두 번째 랜딩페이지 프로젝트."
+              data-contribution="100"
+              data-period="2026.02 ~ 2026.03"
+              data-role="기획 · 디자인 · 퍼블리싱"
+              data-tools="Figma, HTML/CSS"
+              data-tags="#랜딩페이지 #팀프로젝트"
+            >
+              <div class="card-img c-landing">
+                <img src="assets/랜딩페이지-메인.jpg" alt="랜딩페이지" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">랜딩페이지 2</p>
+                  <p class="card-hover-meta">Web Design · Landing</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">랜딩페이지 2</p>
+                <p class="card-meta">Web Design · Landing</p>
+              </div>
+            </div>
+            <div
+              class="work-card"
+              data-category="detail"
+              data-title="상세페이지 2"
+              data-desc="두 번째 상세페이지 프로젝트."
+              data-contribution="100"
+              data-period="2026.02 ~ 2026.03"
+              data-role="디자인 · 퍼블리싱"
+              data-tools="Figma, HTML/CSS"
+              data-tags="#상세페이지 #리디자인"
+            >
+              <div class="card-img c-detail">
+                <img src="assets/introT_AB.jpg" alt="상세페이지" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">상세페이지 2</p>
+                  <p class="card-hover-meta">Web Design · Detail</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">상세페이지 2</p>
+                <p class="card-meta">Web Design · Detail</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Branding / Visual -->
+      <section id="s3">
+        <div class="section-inner">
+          <p class="section-label fade-in">04 — Branding / Visual</p>
+          <h2 class="section-heading fade-in">브랜딩 &amp; <em>비주얼</em></h2>
+          <div class="branding-grid">
+            <div
+              class="brand-card fade-in"
+              data-modal="true"
+              data-title="브랜딩"
+              data-desc="브랜드 아이덴티티 디자인 프로젝트. 로고, 컬러 시스템, 타이포그래피 등 브랜드 전반의 시각 언어를 구축."
+              data-contribution="100"
+              data-period="2025.00 ~ 2025.00"
+              data-role="브랜드 디자인"
+              data-tools="Figma, Illustrator"
+              data-tags="#브랜딩 #아이덴티티"
+            >
+              <div class="brand-card-img c-brand">
+                <img src="assets/브랜딩-메인.jpg" alt="" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">브랜딩</p>
+                  <p class="card-hover-meta">Brand Identity</p>
+                </div>
+              </div>
+              <div class="brand-card-body">
+                <p class="brand-card-title">브랜딩</p>
+                <p class="brand-card-meta">Brand Identity</p>
+              </div>
+            </div>
+            <div
+              class="brand-card fade-in"
+              style="transition-delay: 0.1s"
+              data-modal="true"
+              data-title="웹 포스터"
+              data-desc="다양한 테마와 목적에 맞춰 제작한 웹 포스터 시리즈. 타이포그래피와 이미지를 활용한 비주얼 디자인."
+              data-contribution="100"
+              data-period="2025.00 ~ 2025.00"
+              data-role="비주얼 디자인"
+              data-tools="Figma, Photoshop"
+              data-tags="#포스터 #비주얼"
+            >
+              <div class="brand-card-img c-poster">
+                <img src="assets/웹 포스터_권연주_2.jpg" alt="웹포스터" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">웹 포스터</p>
+                  <p class="card-hover-meta">Visual Design</p>
+                </div>
+              </div>
+              <div class="brand-card-body">
+                <p class="brand-card-title">웹 포스터</p>
+                <p class="brand-card-meta">Visual Design</p>
+              </div>
+            </div>
+            <div
+              class="brand-card fade-in"
+              style="transition-delay: 0.2s"
+              data-modal="true"
+              data-title="SNS 카드뉴스"
+              data-desc="소셜미디어 채널에 맞는 카드뉴스 콘텐츠 디자인. 정보 전달력과 시각적 통일감을 동시에 고려."
+              data-contribution="100"
+              data-period="2025.00 ~ 2025.00"
+              data-role="그래픽 디자인"
+              data-tools="Figma, Illustrator"
+              data-tags="#SNS #카드뉴스 #그래픽"
+            >
+              <div class="brand-card-img c-sns">
+                <img src="assets/sns카드뉴스.png" alt="sns카드뉴스" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">SNS 카드뉴스</p>
+                  <p class="card-hover-meta">Graphic Design</p>
+                </div>
+              </div>
+              <div class="brand-card-body">
+                <p class="brand-card-title">SNS 카드뉴스</p>
+                <p class="brand-card-meta">Graphic Design</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 04 — Side / Etc ─── -->
+      <section id="s4">
+        <div class="section-inner">
+          <p class="section-label fade-in">05 — Side / Etc</p>
+          <h2 class="section-heading fade-in"><em>사이드</em> 작업</h2>
+          <div class="etc-grid">
+            <div
+              class="etc-card fade-in"
+              data-modal="true"
+              data-title="공모전 캐릭터"
+              data-desc="공모전 출품작으로 제작한 캐릭터 디자인. 컨셉 기획부터 최종 시각화까지 전 과정 진행."
+              data-contribution="100"
+              data-period="2025.00 ~ 2025.00"
+              data-role="캐릭터 디자인"
+              data-tools="Illustrator, Figma"
+              data-tags="#공모전 #캐릭터 #일러스트"
+            >
+              <div class="etc-card-img c-char">
+                <img src="assets/공모전.jpg" alt="공모전" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">공모전 캐릭터</p>
+                  <p class="card-hover-meta">Character Design</p>
+                </div>
+              </div>
+              <div class="etc-card-body">
+                <p class="etc-card-title">공모전 캐릭터</p>
+                <p class="etc-card-meta">Character Design</p>
+              </div>
+            </div>
+            <div
+              class="etc-card fade-in"
+              data-link="	violet003.cafe24.com"
+              style="transition-delay: 0.1s"
+              data-link="https://violet003.cafe24.com"
+            >
+              <div class="etc-card-img c-cafe">
+                <img src="assets/카페24-3.jpg" alt="카페24" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">카페24 작업</p>
+                  <p class="card-hover-meta">E-Commerce · View Site →</p>
+                </div>
+              </div>
+              <div class="etc-card-body">
+                <p class="etc-card-title">카페24 작업</p>
+                <p class="etc-card-meta">E-Commerce</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 06 — Contact ─── -->
+      <section id="contact">
+        <div class="contact-inner">
+          <p class="contact-eyebrow fade-in">06 — Contact</p>
+          <h2 class="contact-heading fade-in">
+            (문구문구) <em>다지인을 위해</em>
+          </h2>
+          <p class="contact-sub fade-in">Thank You!</p>
+          <a
+            href="/cdn-cgi/l/email-protection#cbb2a4beb98baea6aaa2a7e5a8a4a6"
+            class="contact-email fade-in"
+            ><span
+              class="__cf_email__"
+              data-cfemail="dba2b4aea99bbeb6bab2b7f5b8b4b6"
+              >[email&#160;protected]</span
+            ></a
+          >
+          <div class="contact-links fade-in">
+            <a href="#" class="contact-link">E-mail</a>
+            <a href="#" class="contact-link">GitHub</a>
+            <a href="#" class="contact-link">Instagram</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── FOOTER ─── -->
+      <footer>
+        <p class="footer-copy">©2025 YJ. All rights reserved.</p>
+        <ul class="footer-nav">
+          <li><a href="#s1">Works</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </footer>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner"></div>
+    </footer>
+  </body>
+</html>
