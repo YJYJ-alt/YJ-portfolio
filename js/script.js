@@ -1,4 +1,4 @@
-// ─── 히어로 망원경 인트로 ───
+// 히어로 망원경 인트로
 (function () {
   const heroEl = document.getElementById("hero");
   const heroLayer = document.getElementById("herolayer");
@@ -263,7 +263,7 @@
   });
 })();
 
-// 커서
+// cursor
 const cursor = document.getElementById("cursor");
 let mx = 0,
   my = 0,
@@ -306,9 +306,15 @@ window.addEventListener("scroll", () => {
 
 // 섹션 닷 인디케이터
 const dots = document.querySelectorAll(".sec-dot");
-const sections = ["hero", "s1", "s2", "s3", "s4", "about", "contact"].map(
-  (id) => document.getElementById(id),
-);
+const sections = [
+  "hero",
+  "aobut",
+  "uiux",
+  "web",
+  "branding",
+  "side",
+  "contact",
+].map((id) => document.getElementById(id));
 dots.forEach((dot) => {
   dot.addEventListener("click", () => {
     document
@@ -407,7 +413,7 @@ workItems.forEach((item, i) => {
   });
 });
 
-// S2 별 캔버스
+// hero 별 캔버스
 const s2canvas = document.getElementById("starsCanvas");
 const s2ctx = s2canvas ? s2canvas.getContext("2d") : null;
 let s2stars = [];
@@ -472,10 +478,37 @@ filterTabs.forEach((tab) => {
     const filter = tab.dataset.filter;
     workCards.forEach((card) => {
       if (filter === "all" || card.dataset.category === filter) {
-        card.style.display = "";
+        card.classList.remove("filtered-out");
       } else {
-        card.style.display = "none";
+        card.classList.add("filtered-out");
       }
     });
   });
+});
+
+// Project & Works 스크롤 애니메이션
+const pwIntro = document.querySelector(".section-pw-intro");
+const pwProject = document.getElementById("pw-project");
+const pwAmp = document.getElementById("pw-amp");
+const pwWorks = document.getElementById("pw-works");
+const pwHint = document.getElementById("pw-hint");
+
+window.addEventListener("scroll", () => {
+  if (!pwIntro) return;
+
+  const rect = pwIntro.getBoundingClientRect();
+  const total = pwIntro.offsetHeight - window.innerHeight;
+  // 0 = 진입 시작, 1 = 섹션 끝
+  const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+
+  // & 페이드 아웃
+  pwAmp.style.opacity = Math.max(0, 1 - progress * 4);
+
+  // Project 왼쪽으로, Works 오른쪽으로
+  const spread = progress * 180;
+  pwProject.style.transform = `translateX(-${spread}px)`;
+  pwWorks.style.transform = `translateX(${spread}px)`;
+
+  // hint 텍스트 페이드 아웃
+  pwHint.style.opacity = Math.max(0, 0.35 - progress * 2);
 });

@@ -18,7 +18,7 @@
   <body>
     <!-- cursor -->
     <div class="cursor" id="cursor"></div>
-    <div class="progress-bar" id="progress"></div>
+    <!-- <div class="progress-bar" id="progress"></div> -->
 
     <!-- modal -->
     <div class="card-modal-backdrop" id="cardModalBackdrop">
@@ -144,20 +144,25 @@
               </div>
 
               <div class="contact-list">
-                <!-- <a href=""></a> -->
-                <div class="contact-icon">
-                  <i class="fa-regular fa-envelope"></i>
-                  <span class="contact-text">
-                    <span> violetchiffonn@gmail.com</span>
-                  </span>
-                  <i class="fa-solid fa-cake-candles"></i>
-                  <span class="contact-text">
-                    <span>1995.07.16</span>
-                  </span>
-                  <i class="fa-solid fa-mobile"></i>
-                  <span class="contact-text">
-                    <span>010-9359-9185</span>
-                  </span>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                  </div>
+                  <span class="contact-text">violetchiffonn@gmail.com</span>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                  </div>
+                  <span class="contact-text">1995.07.16</span>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fa-solid fa-mobile"></i>
+                  </div>
+                  <span class="contact-text">010-9359-9185</span>
                 </div>
               </div>
             </div>
@@ -257,12 +262,12 @@
       <section id="uiux">
         <div class="section-inner">
           <p class="section-label fade-in">01 — Web / UI·UX</p>
-          <h2 class="section-heading fade-in">주요 <em>프로젝트</em></h2>
+          <h2 class="section-heading fade-in">UI·UX Design</h2>
           <div class="sticky-container">
             <div class="sticky-img-panel">
               <div class="sticky-img-frame bg-0" id="stickyFrame">
                 <div class="sticky-img-placeholder" id="stickyPlaceholder">
-                  <img src="assets/웹-고가바.jpg" alt="GoGaba" id="stickyImg" />
+                  <img src="assets/웹-고가바.jpg" alt="Gogaba" id="stickyImg" />
                 </div>
               </div>
             </div>
@@ -270,12 +275,12 @@
               <div
                 class="sticky-work-item active"
                 data-idx="0"
-                data-label="GoGaba"
+                data-label="Gogaba"
                 data-bg="bg-0"
                 data-img="assets/웹-고가바.jpg"
               >
                 <p class="work-num">01</p>
-                <h3 class="work-title">GoGaba<br />협업 웹 서비스 플랫폼</h3>
+                <h3 class="work-title">Gogaba<br />협업 웹 서비스 플랫폼</h3>
                 <p class="work-desc">
                   드라마 촬영지를 여행 코스로 연결하는 2차 협업 웹 서비스. SVG
                   지도 인터랙션, 필터 탭, 루트 카드까지 기획·디자인·퍼블리싱 전
@@ -300,7 +305,7 @@
                 data-img="assets/앱-미션-연주_2.jpg"
               >
                 <p class="work-num">02</p>
-                <h3 class="work-title">협업 앱 디자인</h3>
+                <h3 class="work-title">Knaeko<br />협업 앱 디자인</h3>
                 <p class="work-desc">
                   팀 프로젝트로 진행한 모바일 앱 UI/UX 디자인. 사용자 플로우
                   설계부터 프로토타이핑까지.
@@ -324,7 +329,7 @@
               >
                 <p class="work-num">03</p>
                 <h3 class="work-title">
-                  페레로 로쉐<br />1차 협업 사이트 리디자인
+                  FERRERO ROCHER<br />1차 협업 사이트 리디자인
                 </h3>
                 <p class="work-desc">
                   기존 브랜드 사이트를 리디자인한 1차 협업 프로젝트. 브랜드
@@ -349,7 +354,7 @@
         <canvas class="stars-canvas" id="starsCanvas"></canvas>
         <div class="section-inner" style="position: relative; z-index: 1">
           <p class="section-label fade-in">03 — Web Design</p>
-          <h2 class="section-heading fade-in">페이지 <em>디자인</em></h2>
+          <h2 class="section-heading fade-in">Page Design</h2>
           <div class="filter-tabs fade-in">
             <button class="filter-tab active" data-filter="all">전체</button>
             <button class="filter-tab" data-filter="landing">랜딩페이지</button>
@@ -383,6 +388,30 @@
             </div>
             <div
               class="work-card"
+              data-category="landing"
+              data-title="랜딩페이지 2"
+              data-desc="두 번째 랜딩페이지 프로젝트."
+              data-contribution="100"
+              data-period="2026.02 ~ 2026.03"
+              data-role="기획 · 디자인 · 퍼블리싱"
+              data-tools="Figma, HTML/CSS"
+              data-tags="#랜딩페이지 #팀프로젝트"
+            >
+              <div class="card-img c-landing">
+                <img src="assets/랜딩페이지-메인.jpg" alt="랜딩페이지" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">랜딩페이지 2</p>
+                  <p class="card-hover-meta">Web Design · Landing</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">랜딩페이지 2</p>
+                <p class="card-meta">Web Design · Landing</p>
+              </div>
+            </div>
+
+            <div
+              class="work-card"
               data-category="detail"
               data-title="상세페이지"
               data-desc="제품의 특징을 효과적으로 전달하기 위한 상세페이지 디자인."
@@ -401,6 +430,29 @@
               </div>
               <div class="card-body">
                 <p class="card-title">상세페이지</p>
+                <p class="card-meta">Web Design · Detail</p>
+              </div>
+            </div>
+            <div
+              class="work-card"
+              data-category="detail"
+              data-title="상세페이지 2"
+              data-desc="두 번째 상세페이지 프로젝트."
+              data-contribution="100"
+              data-period="2026.02 ~ 2026.03"
+              data-role="디자인 · 퍼블리싱"
+              data-tools="Figma, HTML/CSS"
+              data-tags="#상세페이지 #리디자인"
+            >
+              <div class="card-img c-detail">
+                <img src="assets/introT_AB.jpg" alt="상세페이지" />
+                <div class="card-hover-overlay">
+                  <p class="card-hover-title">상세페이지 2</p>
+                  <p class="card-hover-meta">Web Design · Detail</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-title">상세페이지 2</p>
                 <p class="card-meta">Web Design · Detail</p>
               </div>
             </div>
@@ -451,52 +503,6 @@
                 <p class="card-meta">Frontend · Clone</p>
               </div>
             </div>
-            <div
-              class="work-card"
-              data-category="landing"
-              data-title="랜딩페이지 2"
-              data-desc="두 번째 랜딩페이지 프로젝트."
-              data-contribution="100"
-              data-period="2026.02 ~ 2026.03"
-              data-role="기획 · 디자인 · 퍼블리싱"
-              data-tools="Figma, HTML/CSS"
-              data-tags="#랜딩페이지 #팀프로젝트"
-            >
-              <div class="card-img c-landing">
-                <img src="assets/랜딩페이지-메인.jpg" alt="랜딩페이지" />
-                <div class="card-hover-overlay">
-                  <p class="card-hover-title">랜딩페이지 2</p>
-                  <p class="card-hover-meta">Web Design · Landing</p>
-                </div>
-              </div>
-              <div class="card-body">
-                <p class="card-title">랜딩페이지 2</p>
-                <p class="card-meta">Web Design · Landing</p>
-              </div>
-            </div>
-            <div
-              class="work-card"
-              data-category="detail"
-              data-title="상세페이지 2"
-              data-desc="두 번째 상세페이지 프로젝트."
-              data-contribution="100"
-              data-period="2026.02 ~ 2026.03"
-              data-role="디자인 · 퍼블리싱"
-              data-tools="Figma, HTML/CSS"
-              data-tags="#상세페이지 #리디자인"
-            >
-              <div class="card-img c-detail">
-                <img src="assets/introT_AB.jpg" alt="상세페이지" />
-                <div class="card-hover-overlay">
-                  <p class="card-hover-title">상세페이지 2</p>
-                  <p class="card-hover-meta">Web Design · Detail</p>
-                </div>
-              </div>
-              <div class="card-body">
-                <p class="card-title">상세페이지 2</p>
-                <p class="card-meta">Web Design · Detail</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -505,7 +511,7 @@
       <section id="s3">
         <div class="section-inner">
           <p class="section-label fade-in">04 — Branding / Visual</p>
-          <h2 class="section-heading fade-in">브랜딩 &amp; <em>비주얼</em></h2>
+          <h2 class="section-heading fade-in">Branding & Visual</h2>
           <div class="branding-grid">
             <div
               class="brand-card fade-in"
@@ -582,11 +588,11 @@
         </div>
       </section>
 
-      <!-- ─── SECTION 04 — Side / Etc ─── -->
+      <!-- 6. Side / Etc -->
       <section id="s4">
         <div class="section-inner">
           <p class="section-label fade-in">05 — Side / Etc</p>
-          <h2 class="section-heading fade-in"><em>사이드</em> 작업</h2>
+          <h2 class="section-heading fade-in">Etc Design</h2>
           <div class="etc-grid">
             <div
               class="etc-card fade-in"
@@ -633,7 +639,7 @@
         </div>
       </section>
 
-      <!-- ─── SECTION 06 — Contact ─── -->
+      <!-- 7. Contact -->
       <section id="contact">
         <div class="contact-inner">
           <p class="contact-eyebrow fade-in">06 — Contact</p>
@@ -658,7 +664,7 @@
         </div>
       </section>
 
-      <!-- ─── FOOTER ─── -->
+      <!-- 8. FOOTER -->
       <footer>
         <p class="footer-copy">©2025 YJ. All rights reserved.</p>
         <ul class="footer-nav">
