@@ -515,7 +515,7 @@ window.addEventListener("scroll", () => {
 });
 
 // 카드 모달
-const backdrop = document.getElementById("cardModalBackdrop");
+const backdrop = document.getElementById("cardModalBackdrop"); // ← 위로!
 const modalClose = document.getElementById("cardModalClose");
 
 function openModal(data) {
@@ -577,7 +577,11 @@ document.querySelectorAll(".work-btns .work-link").forEach((btn) => {
     e.stopPropagation();
     const item = btn.closest(".sticky-work-item");
     const url =
-      btn.dataset.type === "figma" ? item.dataset.figma : item.dataset.process;
+      btn.dataset.type === "figma"
+        ? item.dataset.figma
+        : btn.dataset.type === "process"
+          ? item.dataset.process
+          : item.dataset.original;
     if (url) window.open(url, "_blank");
   });
 });

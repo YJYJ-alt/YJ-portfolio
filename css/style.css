@@ -863,7 +863,7 @@ section {
 .sticky-items-panel {
   width: 50%;
   padding-top: 0;
-  padding-bottom: 500px; /* 200px → 500px, 더 길게 하려면 더 키워도 돼 */
+  padding-bottom: 500px;
   padding-left: 64px;
 }
 .sticky-work-item {
@@ -968,6 +968,15 @@ section {
   object-fit: cover;
   object-position: center top;
   opacity: 1;
+}
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
 }
 
 /* 4. Web Design (별 + 필터 그리드) */
