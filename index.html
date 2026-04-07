@@ -13,12 +13,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
   </head>
 
   <body>
     <!-- cursor -->
     <div class="cursor" id="cursor"></div>
-    <!-- <div class="progress-bar" id="progress"></div> -->
+    <!-- <상단바 게이지 -->
+    <div class="progress-bar" id="progress"></div>
 
     <!-- modal -->
     <div class="card-modal-backdrop" id="cardModalBackdrop">
@@ -30,6 +35,16 @@
         <div class="card-modal-tags" id="cardModalTags"></div>
         <h3 class="card-modal-title" id="cardModalTitle"></h3>
         <p class="card-modal-desc" id="cardModalDesc"></p>
+        <a
+          href="#"
+          class="card-modal-github"
+          id="cardModalGithub"
+          target="_blank"
+          style="display: none"
+        >
+          <i id="cardModalGithubIcon"></i>
+          <span id="cardModalGithubLabel"></span>
+        </a>
         <div class="card-modal-divider"></div>
         <div class="card-modal-meta-grid">
           <div class="card-modal-meta-item">
@@ -74,14 +89,15 @@
           </ul>
         </nav>
 
-        <!-- 섹션 닷 인디케이터 -->
+        <!-- 섹션 dot 인디케이터 -->
         <div class="section-dots" id="sectionDots">
           <div class="sec-dot active" data-target="hero"></div>
-          <div class="sec-dot" data-target="s1"></div>
+          <div class="sec-dot" data-target="about"></div>
+          <div class="sec-dot" data-target="pw-intro"></div>
+          <div class="sec-dot" data-target="uiux"></div>
           <div class="sec-dot" data-target="s2"></div>
           <div class="sec-dot" data-target="s3"></div>
           <div class="sec-dot" data-target="s4"></div>
-          <div class="sec-dot" data-target="about"></div>
           <div class="sec-dot" data-target="contact"></div>
         </div>
       </div>
@@ -140,7 +156,7 @@
           <div class="about-grid">
             <div class="about-left fade-in">
               <div class="avatar">
-                <img src="assets/임시2.png" alt="프로필 사진" />
+                <img src="assets/임시 프로필.png" alt="프로필 사진" />
               </div>
 
               <div class="contact-list">
@@ -278,6 +294,8 @@
                 data-label="Gogaba"
                 data-bg="bg-0"
                 data-img="assets/웹-고가바.jpg"
+                data-figma="https://www.figma.com/proto/8RfY4txkmk00nFn8OdFZAE/1%EC%A1%B0---Gogaba?page-id=41%3A7&node-id=1509-4762&viewport=713%2C285%2C0.09&t=RgZ6jO6NSSIrFik5-1&scaling=min-zoom&content-scaling=fixed"
+                data-process="https://www.figma.com/proto/8RfY4txkmk00nFn8OdFZAE/1%EC%A1%B0---Gogaba?page-id=41%3A7&node-id=1519-1154&viewport=713%2C285%2C0.09&t=RgZ6jO6NSSIrFik5-1&scaling=min-zoom&content-scaling=fixed"
               >
                 <p class="work-num">01</p>
                 <h3 class="work-title">Gogaba<br />협업 웹 서비스 플랫폼</h3>
@@ -292,9 +310,14 @@
                   <span class="work-tag">JavaScript</span>
                   <span class="work-tag">협업</span>
                 </div>
-                <a href="#" class="work-link"
-                  >View Project <span class="work-link-arrow">→</span></a
-                >
+                <div class="work-btns">
+                  <a href="#" class="work-link" data-type="figma"
+                    >View Project <span class="work-link-arrow">→</span></a
+                  >
+                  <a href="#" class="work-link" data-type="process"
+                    >View Process <span class="work-link-arrow">→</span></a
+                  >
+                </div>
               </div>
 
               <div
@@ -303,6 +326,7 @@
                 data-label="앱 디자인"
                 data-bg="bg-1"
                 data-img="assets/앱-미션-연주_2.jpg"
+                data-figma="https://www.figma.com/proto/jTRmrfeVrh7QdHYvhP56rq/1%EC%A1%B0-KNAEKO?page-id=325%3A2619&node-id=337-2863&viewport=529%2C257%2C0.11&t=H9mJSM1KjCQzfqSY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=337%3A2848"
               >
                 <p class="work-num">02</p>
                 <h3 class="work-title">Knaeko<br />협업 앱 디자인</h3>
@@ -315,9 +339,14 @@
                   <span class="work-tag">앱 디자인</span>
                   <span class="work-tag">프로토타입</span>
                 </div>
-                <a href="#" class="work-link"
-                  >View Project <span class="work-link-arrow">→</span></a
-                >
+                <div class="work-btns">
+                  <a href="#" class="work-link" data-type="figma"
+                    >View Project <span class="work-link-arrow">→</span></a
+                  >
+                  <!-- <a href="#" class="work-link" data-type="process"
+                    >View Process <span class="work-link-arrow">→</span></a
+                  > -->
+                </div>
               </div>
 
               <div
@@ -326,6 +355,8 @@
                 data-label="페레로 로쉐"
                 data-bg="bg-2"
                 data-img="assets/앱-페레로 리디자인.jpg"
+                data-figma="https://www.figma.com/proto/4PhvcORXtIywYKbQTac9DB/3%EC%A1%B0--Copy-?page-id=1%3A2&node-id=690-42&viewport=52%2C313%2C0.02&t=ypL0PjgHfNsul5hl-1&scaling=min-zoom&content-scaling=fixed"
+                data-process="https://www.figma.com/proto/4PhvcORXtIywYKbQTac9DB/3%EC%A1%B0--Copy-?page-id=1%3A2&node-id=3013-110&viewport=52%2C313%2C0.02&t=ypL0PjgHfNsul5hl-1&scaling=min-zoom&content-scaling=fixed"
               >
                 <p class="work-num">03</p>
                 <h3 class="work-title">
@@ -338,11 +369,18 @@
                 <div class="work-tags">
                   <span class="work-tag">리디자인</span>
                   <span class="work-tag">Figma</span>
+                  <span class="work-tag">HTML</span>
+                  <span class="work-tag">CSS</span>
                   <span class="work-tag">협업</span>
                 </div>
-                <a href="#" class="work-link"
-                  >View Project <span class="work-link-arrow">→</span></a
-                >
+                <div class="work-btns">
+                  <a href="#" class="work-link" data-type="figma"
+                    >View Project <span class="work-link-arrow">→</span></a
+                  >
+                  <a href="#" class="work-link" data-type="process"
+                    >View Process <span class="work-link-arrow">→</span></a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -363,42 +401,47 @@
             <button class="filter-tab" data-filter="clone">클론코딩</button>
           </div>
           <div class="works-grid">
+            <!-- 랜딩페이지1 -->
             <div
               class="work-card"
               data-category="landing"
-              data-title="랜딩페이지"
-              data-desc="브랜드 아이덴티티를 담은 랜딩페이지 디자인 및 퍼블리싱 프로젝트."
+              data-title="인프런 랜딩페이지"
+              data-desc="학습의 흐름을 시각적으로 풀어낸 웹 랜딩페이지."
               data-contribution="100"
-              data-period="2026.01 ~ 2026.02"
-              data-role="기획 · 디자인 · 퍼블리싱"
-              data-tools="Figma, HTML/CSS"
+              data-period="2025.02.02 ~ 2026.02.05"
+              data-role="기획 · 디자인"
+              data-tools="Figma"
               data-tags="#랜딩페이지 #웹디자인"
+              data-image="assets/랜딩페이지.jpg"
+              data-img="assets/랜딩페이지.jpg"
             >
               <div class="card-img c-landing">
                 <img src="assets/랜딩페이지-메인.jpg" alt="랜딩페이지" />
                 <div class="card-hover-overlay">
-                  <p class="card-hover-title">랜딩페이지 2</p>
+                  <p class="card-hover-title">자세히 보기</p>
                   <p class="card-hover-meta">Web Design · Landing</p>
                 </div>
               </div>
               <div class="card-body">
-                <p class="card-title">랜딩페이지</p>
+                <p class="card-title">인프런 랜딩페이지</p>
                 <p class="card-meta">Web Design · Landing</p>
               </div>
             </div>
+
+            <!-- 랜딩페이지2 -->
             <div
               class="work-card"
               data-category="landing"
               data-title="랜딩페이지 2"
               data-desc="두 번째 랜딩페이지 프로젝트."
               data-contribution="100"
-              data-period="2026.02 ~ 2026.03"
-              data-role="기획 · 디자인 · 퍼블리싱"
-              data-tools="Figma, HTML/CSS"
-              data-tags="#랜딩페이지 #팀프로젝트"
+              data-period="2026.0X ~ 2026.0X"
+              data-role="기획 · 디자인"
+              data-tools="Figma"
+              data-tags="#랜딩페이지 #앱디자인"
             >
               <div class="card-img c-landing">
-                <img src="assets/랜딩페이지-메인.jpg" alt="랜딩페이지" />
+                <img src="assets/랜딩임시.jpg" alt="랜딩페이지" />
                 <div class="card-hover-overlay">
                   <p class="card-hover-title">랜딩페이지 2</p>
                   <p class="card-hover-meta">Web Design · Landing</p>
@@ -410,16 +453,18 @@
               </div>
             </div>
 
+            <!-- 상세페이지1 -->
             <div
               class="work-card"
               data-category="detail"
               data-title="상세페이지"
-              data-desc="제품의 특징을 효과적으로 전달하기 위한 상세페이지 디자인."
+              data-desc="브랜드 무드를 중심으로 구성한 텀블러 상세페이지."
               data-contribution="100"
-              data-period="2026.02 ~ 2026.02"
-              data-role="디자인 · 퍼블리싱"
-              data-tools="Figma, HTML/CSS"
+              data-period="2026.02.09 ~ 2026.02.11"
+              data-role="UI 디자인"
+              data-tools="Photoshop, Nano Banana "
               data-tags="#상세페이지 #웹디자인"
+              data-img="assets/상세페이지_권연주.jpg"
             >
               <div class="card-img c-detail">
                 <img src="assets/상세페이지-메인.jpg" alt="상세페이지" />
@@ -433,6 +478,8 @@
                 <p class="card-meta">Web Design · Detail</p>
               </div>
             </div>
+
+            <!-- 상세페이지2 -->
             <div
               class="work-card"
               data-category="detail"
@@ -440,9 +487,9 @@
               data-desc="두 번째 상세페이지 프로젝트."
               data-contribution="100"
               data-period="2026.02 ~ 2026.03"
-              data-role="디자인 · 퍼블리싱"
-              data-tools="Figma, HTML/CSS"
-              data-tags="#상세페이지 #리디자인"
+              data-role="디자인"
+              data-tools="Photoshop"
+              data-tags="#상세페이지"
             >
               <div class="card-img c-detail">
                 <img src="assets/introT_AB.jpg" alt="상세페이지" />
@@ -456,20 +503,26 @@
                 <p class="card-meta">Web Design · Detail</p>
               </div>
             </div>
+
+            <!-- gif 상세페이지 -->
             <div
               class="work-card"
               data-category="gif"
               data-title="GIF 상세페이지"
               data-desc="GIF 애니메이션을 활용해 제품 이미지를 효과적으로 전달하는 상세페이지."
               data-contribution="100"
-              data-period="2026.01 ~ 2026.02"
-              data-role="디자인 · 퍼블리싱"
-              data-tools="Figma, Photoshop"
+              data-period="2026.02.27 ~ 2026.03.05"
+              data-role="디자인"
+              data-tools="Photoshop"
               data-tags="#gif #상세페이지 #컬러풀"
+              data-github="http://violet003.cafe24.com"
+              data-github-label="카페24에서 보기"
+              data-github-icon="fa-solid fa-store"
+              data-img="assets/gif상페2.jpg"
             >
               <div class="card-img c-gif">
-                <span class="card-img-label">GIF</span>
-                <img src="assets/gif 상페.jpg" alt="gif" />
+                <!-- <span class="card-img-label">GIF</span> -->
+                <img src="assets/gif상페2.jpg" alt="gif" />
                 <div class="card-hover-overlay">
                   <p class="card-hover-title">GIF 상세페이지</p>
                   <p class="card-hover-meta">Web Design · GIF Detail</p>
@@ -480,27 +533,33 @@
                 <p class="card-meta">Web Design · GIF Detail</p>
               </div>
             </div>
+
+            <!-- 클론코딩 -->
             <div
               class="work-card"
               data-category="clone"
               data-title="클론코딩"
               data-desc="실제 웹사이트를 분석하고 HTML/CSS/JS로 재현한 클론코딩 프로젝트."
               data-contribution="100"
-              data-period="2026.01 ~ 2026.01"
+              data-period="2026.04.XX ~ 2026.04.XX"
               data-role="퍼블리싱"
-              data-tools="HTML, CSS, JavaScript"
-              data-tags="#클론코딩 #프론트엔드"
+              data-tools="HTML, CSS, JavaScript ,VSC"
+              data-tags="#클론코딩"
+              data-github="#"
+              data-github-label="GitHub에서 보기"
+              data-github-icon="fa-brands fa-github"
+              data-img="assets/클론코딩.jpg"
             >
               <div class="card-img c-clone">
                 <img src="assets/클론코딩.jpg" alt="클론코딩" />
                 <div class="card-hover-overlay">
                   <p class="card-hover-title">클론코딩</p>
-                  <p class="card-hover-meta">Frontend · Clone</p>
+                  <p class="card-hover-meta">Clone</p>
                 </div>
               </div>
               <div class="card-body">
                 <p class="card-title">클론코딩</p>
-                <p class="card-meta">Frontend · Clone</p>
+                <p class="card-meta">Clone</p>
               </div>
             </div>
           </div>
@@ -513,16 +572,18 @@
           <p class="section-label fade-in">04 — Branding / Visual</p>
           <h2 class="section-heading fade-in">Branding & Visual</h2>
           <div class="branding-grid">
+            <!-- 브랜딩 -->
             <div
               class="brand-card fade-in"
               data-modal="true"
               data-title="브랜딩"
               data-desc="브랜드 아이덴티티 디자인 프로젝트. 로고, 컬러 시스템, 타이포그래피 등 브랜드 전반의 시각 언어를 구축."
               data-contribution="100"
-              data-period="2025.00 ~ 2025.00"
+              data-period="2024.08 ~ 2024.08"
               data-role="브랜드 디자인"
-              data-tools="Figma, Illustrator"
+              data-tools="Photoshop, Illustrator"
               data-tags="#브랜딩 #아이덴티티"
+              data-img="assets/브랜딩.jpg"
             >
               <div class="brand-card-img c-brand">
                 <img src="assets/브랜딩-메인.jpg" alt="" />
@@ -536,6 +597,8 @@
                 <p class="brand-card-meta">Brand Identity</p>
               </div>
             </div>
+
+            <!-- 웹 포스터 -->
             <div
               class="brand-card fade-in"
               style="transition-delay: 0.1s"
@@ -543,13 +606,14 @@
               data-title="웹 포스터"
               data-desc="다양한 테마와 목적에 맞춰 제작한 웹 포스터 시리즈. 타이포그래피와 이미지를 활용한 비주얼 디자인."
               data-contribution="100"
-              data-period="2025.00 ~ 2025.00"
+              data-period="2026.01.23 ~ 2026.01.27"
               data-role="비주얼 디자인"
-              data-tools="Figma, Photoshop"
+              data-tools="Photoshop"
               data-tags="#포스터 #비주얼"
+              data-img="assets/웹 포스터 합본.jpg"
             >
               <div class="brand-card-img c-poster">
-                <img src="assets/웹 포스터_권연주_2.jpg" alt="웹포스터" />
+                <img src="assets/웹 포스터-메인.jpg" alt="웹포스터" />
                 <div class="card-hover-overlay">
                   <p class="card-hover-title">웹 포스터</p>
                   <p class="card-hover-meta">Visual Design</p>
@@ -560,6 +624,8 @@
                 <p class="brand-card-meta">Visual Design</p>
               </div>
             </div>
+
+            <!-- sns 카드뉴스 -->
             <div
               class="brand-card fade-in"
               style="transition-delay: 0.2s"
@@ -567,10 +633,11 @@
               data-title="SNS 카드뉴스"
               data-desc="소셜미디어 채널에 맞는 카드뉴스 콘텐츠 디자인. 정보 전달력과 시각적 통일감을 동시에 고려."
               data-contribution="100"
-              data-period="2025.00 ~ 2025.00"
+              data-period="2026.02.02 ~ 2026.02.06"
               data-role="그래픽 디자인"
-              data-tools="Figma, Illustrator"
+              data-tools="Photoshop"
               data-tags="#SNS #카드뉴스 #그래픽"
+              data-img="assets/sns카드뉴스.png"
             >
               <div class="brand-card-img c-sns">
                 <img src="assets/sns카드뉴스.png" alt="sns카드뉴스" />
@@ -594,16 +661,18 @@
           <p class="section-label fade-in">05 — Side / Etc</p>
           <h2 class="section-heading fade-in">Etc Design</h2>
           <div class="etc-grid">
+            <!-- 공모전 -->
             <div
               class="etc-card fade-in"
               data-modal="true"
               data-title="공모전 캐릭터"
               data-desc="공모전 출품작으로 제작한 캐릭터 디자인. 컨셉 기획부터 최종 시각화까지 전 과정 진행."
               data-contribution="100"
-              data-period="2025.00 ~ 2025.00"
+              data-period="2025.12.15 ~ 2025.12.21"
               data-role="캐릭터 디자인"
-              data-tools="Illustrator, Figma"
+              data-tools="Illustrator, Photoshop"
               data-tags="#공모전 #캐릭터 #일러스트"
+              data-img="assets/공모전 상세.jpg"
             >
               <div class="etc-card-img c-char">
                 <img src="assets/공모전.jpg" alt="공모전" />
@@ -617,13 +686,18 @@
                 <p class="etc-card-meta">Character Design</p>
               </div>
             </div>
+
+            <!-- 카페24 -->
             <div
               class="etc-card fade-in"
-              data-link="	violet003.cafe24.com"
+              data-link="	http://violet003.cafe24.com"
               style="transition-delay: 0.1s"
-              data-link="https://violet003.cafe24.com"
             >
               <div class="etc-card-img c-cafe">
+                <span class="card-img-label">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  사이트 바로가기
+                </span>
                 <img src="assets/카페24-3.jpg" alt="카페24" />
                 <div class="card-hover-overlay">
                   <p class="card-hover-title">카페24 작업</p>
@@ -644,7 +718,7 @@
         <div class="contact-inner">
           <p class="contact-eyebrow fade-in">06 — Contact</p>
           <h2 class="contact-heading fade-in">
-            (문구문구) <em>다지인을 위해</em>
+            작은 경험을 쌓아, 더 나은 결과를 만듭니다.
           </h2>
           <p class="contact-sub fade-in">Thank You!</p>
           <a
@@ -675,9 +749,5 @@
         </ul>
       </footer>
     </main>
-
-    <footer class="site-footer">
-      <div class="inner"></div>
-    </footer>
   </body>
 </html>

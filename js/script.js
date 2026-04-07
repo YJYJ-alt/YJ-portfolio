@@ -308,11 +308,12 @@ window.addEventListener("scroll", () => {
 const dots = document.querySelectorAll(".sec-dot");
 const sections = [
   "hero",
-  "aobut",
+  "about",
+  "pw-intro",
   "uiux",
-  "web",
-  "branding",
-  "side",
+  "s2",
+  "s3",
+  "s4",
   "contact",
 ].map((id) => document.getElementById(id));
 dots.forEach((dot) => {
@@ -511,4 +512,106 @@ window.addEventListener("scroll", () => {
 
   // hint 텍스트 페이드 아웃
   pwHint.style.opacity = Math.max(0, 0.35 - progress * 2);
+});
+
+// 카드 모달
+const backdrop = document.getElementById("cardModalBackdrop");
+const modalClose = document.getElementById("cardModalClose");
+
+function openModal(data) {
+  document.getElementById("cardModalTitle").textContent = data.title;
+  document.getElementById("cardModalDesc").textContent = data.desc;
+  document.getElementById("cardModalContrib").textContent =
+    data.contribution + "%";
+  document.getElementById("cardModalPeriod").textContent = data.period;
+  document.getElementById("cardModalRole").textContent = data.role;
+  document.getElementById("cardModalTools").textContent = data.tools;
+  document.getElementById("cardModalContribFill").style.width =
+    data.contribution + "%";
+  document.getElementById("cardModalThumb");
+  const thumb = document.getElementById("cardModalThumb");
+  if (data.img) {
+    thumb.innerHTML = `<img src="${data.img}" alt="${data.title}" />`;
+    thumb.style.background = "";
+  } else {
+    thumb.innerHTML = "";
+    thumb.style.background = "#2d2550";
+  }
+  requestAnimationFrame(() => {
+    thumb.scrollTop = 0;
+  });
+
+  // GitHub 버튼
+  const githubBtn = document.getElementById("cardModalGithub");
+  if (data.github) {
+    githubBtn.href = data.github;
+    githubBtn.style.display = "inline-flex";
+    document.getElementById("cardModalGithubLabel").textContent =
+      data.githubLabel;
+    document.getElementById("cardModalGithubIcon").className = data.githubIcon;
+  } else {
+    githubBtn.style.display = "none";
+    githubBtn.href = "#";
+    document.getElementById("cardModalGithubLabel").textContent = "";
+    document.getElementById("cardModalGithubIcon").className = "";
+  }
+
+  // 태그
+  const tagsEl = document.getElementById("cardModalTags");
+  tagsEl.innerHTML = data.tags
+    .split(" ")
+    .map((t) => `<span class="card-modal-tag">${t}</span>`)
+    .join("");
+
+  backdrop.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  backdrop.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.querySelectorAll(".work-btns .work-link").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const item = btn.closest(".sticky-work-item");
+    const url =
+      btn.dataset.type === "figma" ? item.dataset.figma : item.dataset.process;
+    if (url) window.open(url, "_blank");
+  });
+});
+
+// work-card, brand-card, etc-card 클릭
+document
+  .querySelectorAll(".work-card, .brand-card, .etc-card")
+  .forEach((card) => {
+    if (!card.dataset.title && !card.dataset.link) return;
+    card.addEventListener("click", () => {
+      if (card.dataset.link) {
+        window.open(card.dataset.link, "_blank");
+        return;
+      }
+      openModal({
+        title: card.dataset.title,
+        desc: card.dataset.desc,
+        contribution: card.dataset.contribution || "100",
+        period: card.dataset.period || "-",
+        role: card.dataset.role || "-",
+        tools: card.dataset.tools || "-",
+        tags: card.dataset.tags || "",
+        img: card.dataset.img || "",
+        github: card.dataset.github || "",
+        githubLabel: card.dataset.githubLabel || "",
+        githubIcon: card.dataset.githubIcon || "",
+      });
+    });
+  });
+
+modalClose.addEventListener("click", closeModal);
+backdrop.addEventListener("click", (e) => {
+  if (e.target === backdrop) closeModal();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
 });
