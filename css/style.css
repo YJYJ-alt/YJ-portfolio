@@ -287,6 +287,7 @@ nav.scrolled .nav-links a {
   letter-spacing: 0.25em;
 }
 .hero-main {
+  /* font-family: "Pretendard", sans-serif; */
   font-family: var(--font-display);
   font-size: clamp(32px, 5vw, 68px);
   font-weight: 300;
@@ -487,7 +488,7 @@ section {
   flex-direction: column;
 }
 
-.avatar-frame {
+.avatar {
   position: relative;
   width: 100%;
   display: flex;
@@ -499,12 +500,12 @@ section {
   aspect-ratio: 1/1;
   border-radius: 16px;
 }
-.avatar-placeholder {
+/* .avatar-placeholder {
   font-family: var(--font-display);
   font-size: 13px;
   font-style: italic;
   color: rgba(173, 166, 216, 0.35);
-}
+} */
 .avatar-frame img {
   width: 100%;
   height: 100%;
@@ -561,11 +562,11 @@ section {
   color: var(--s4-text);
   opacity: 0.8;
 }
-.about-intro em {
+/* .about-intro em {
   font-style: italic;
   color: var(--s4-muted);
   opacity: 1;
-}
+} */
 
 .about-divider {
   height: 0.5px;
@@ -811,7 +812,7 @@ section {
   position: sticky;
   top: 120px;
   width: 50%;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 130px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -838,7 +839,7 @@ section {
   object-position: top;
   border-radius: 16px;
 } */
-.sticky-img-placeholder {
+/* .sticky-img-placeholder {
   position: absolute;
   display: flex;
   align-items: center;
@@ -849,7 +850,7 @@ section {
   font-weight: 300;
   transition: all var(--transition);
   inset: 0;
-}
+} */
 .sticky-img-frame.bg-0 {
   background: #2d1f5e;
 }
@@ -907,6 +908,7 @@ section {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .work-tag {
   padding: 4px 12px;
@@ -942,6 +944,36 @@ section {
 .sticky-work-item.active .work-link-arrow {
   animation: nudge 1.5s ease-in-out infinite;
 }
+.work-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 0.5px solid rgba(155, 143, 212, 0.15);
+  border-radius: 10px;
+  background: rgba(155, 143, 212, 0.05);
+}
+.work-meta-item {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  font-size: 13px;
+}
+.work-meta-label {
+  min-width: 40px;
+  font-size: 10px;
+  color: var(--s1-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+.work-meta-value {
+  color: var(--s1-muted);
+  line-height: 1.6;
+}
+
 .work-btns {
   display: flex;
   gap: 16px;
@@ -1136,6 +1168,7 @@ section {
   border-radius: 20px;
 }
 .card-body {
+  position: relative;
   padding: 20px 22px;
 }
 .card-title {
@@ -1148,6 +1181,29 @@ section {
   font-size: 12px;
   color: var(--s2-muted);
   opacity: 0.6;
+}
+.card-notion-btn {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 0.5px solid rgba(110, 95, 191, 0.3);
+  background: rgba(110, 95, 191, 0.1);
+  font-family: "Pretendard", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--s2-muted);
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.card-notion-btn:hover {
+  background: rgba(110, 95, 191, 0.3);
+  color: #fff;
 }
 
 /* 5. Branding / Visual */
@@ -1200,7 +1256,6 @@ section {
 .brand-card-img-label {
   font-family: var(--font-display);
   font-size: 13px;
-  font-style: italic;
   color: rgba(255, 255, 255, 0.25);
 }
 .brand-card-body {
@@ -1274,7 +1329,6 @@ section {
 .etc-card-img-label {
   font-family: var(--font-display);
   font-size: 12px;
-  font-style: italic;
   color: rgba(255, 255, 255, 0.2);
 }
 .etc-card-body {
@@ -1538,7 +1592,6 @@ footer {
 .card-modal-thumb-label {
   font-family: var(--font-display);
   font-size: 14px;
-  font-style: italic;
   color: rgba(255, 255, 255, 0.2);
 }
 .card-modal-tags {
@@ -1614,19 +1667,6 @@ footer {
   width: 100%;
   height: auto;
   display: block;
-}
-.card-modal-github {
-  display: inline-flex;
-  gap: 6px;
-  align-items: center;
-  margin-top: 12px;
-  padding: 8px 16px;
-  background: #2d2550;
-  font-size: 0.85rem;
-  color: #c9c2f0;
-  transition: background 0.2s;
-  border-radius: 8px;
-  margin-bottom: 24px;
 }
 .card-modal-github:hover {
   background: #3d3570;
