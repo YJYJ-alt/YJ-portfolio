@@ -385,14 +385,14 @@ function setActiveItem(idx) {
 }
 
 // 패럴랙스
-const stickyContainer = document.querySelector(".sticky-container");
-window.addEventListener("scroll", () => {
-  if (!stickyContainer) return;
-  const rect = stickyContainer.getBoundingClientRect();
-  const progress = 1 - rect.bottom / (rect.height + window.innerHeight);
-  const move = progress * 30;
-  stickyImg.style.transform = `translateY(${move}%)`;
-});
+// const stickyContainer = document.querySelector(".sticky-container");
+// window.addEventListener("scroll", () => {
+//   if (!stickyContainer) return;
+//   const rect = stickyContainer.getBoundingClientRect();
+//   const progress = 1 - rect.bottom / (rect.height + window.innerHeight);
+//   const move = progress * 30;
+//   stickyImg.style.transform = `translateY(${move}%)`;
+// });
 
 const itemObserver = new IntersectionObserver(
   (entries) => {
@@ -541,21 +541,6 @@ function openModal(data) {
     thumb.scrollTop = 0;
   });
 
-  // GitHub 버튼
-  const githubBtn = document.getElementById("cardModalGithub");
-  if (data.github) {
-    githubBtn.href = data.github;
-    githubBtn.style.display = "inline-flex";
-    document.getElementById("cardModalGithubLabel").textContent =
-      data.githubLabel;
-    document.getElementById("cardModalGithubIcon").className = data.githubIcon;
-  } else {
-    githubBtn.style.display = "none";
-    githubBtn.href = "#";
-    document.getElementById("cardModalGithubLabel").textContent = "";
-    document.getElementById("cardModalGithubIcon").className = "";
-  }
-
   // 태그
   const tagsEl = document.getElementById("cardModalTags");
   tagsEl.innerHTML = data.tags
@@ -605,9 +590,6 @@ document
         tools: card.dataset.tools || "-",
         tags: card.dataset.tags || "",
         img: card.dataset.img || "",
-        github: card.dataset.github || "",
-        githubLabel: card.dataset.githubLabel || "",
-        githubIcon: card.dataset.githubIcon || "",
       });
     });
   });
