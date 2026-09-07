@@ -197,7 +197,7 @@
     sCtx.restore();
   }
 
-  function runIntro() {
+  runIntro = function () {
     heroLayer.classList.remove("visible");
     lensLayer.style.opacity = "1";
     currentR = 0;
@@ -246,7 +246,7 @@
         },
       );
     }, 300);
-  }
+  };
 
   replaybtn.addEventListener("click", () => runIntro());
   resize();
@@ -618,4 +618,10 @@ backdrop.addEventListener("click", (e) => {
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
+});
+
+document.querySelector(".nav-logo").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => runIntro(), 500);
 });
